@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
 
 const Home: NextPage = () => {
   return (
@@ -11,14 +11,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
-        <div className="flex-shrink-0">
-        </div>
-        <div>
-          <div className="text-xl font-medium text-black">ChitChat</div>
-          <p className="text-gray-500">You have a new message!</p>
-        </div>
-      </div>
 
       <footer className={""}>
         <a
@@ -28,12 +20,12 @@ const Home: NextPage = () => {
         >
           Powered by{' '}
           <span className={""}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            {/*<Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />*/}
           </span>
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
