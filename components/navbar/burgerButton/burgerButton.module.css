@@ -1,0 +1,87 @@
+.burgerButton {
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bars {
+    width: 2rem;
+    margin: 12%;
+    border-top: 3px solid white;
+}
+
+.XBarsAnimation {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-name: combineBars, rotate90deg, rotate45degClockwise;
+}
+
+.XBarsAnimationReversed {
+    animation-duration: 1s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-name: combineBars, rotate90deg, rotate45degClockwise;
+}
+
+.Xbar1Animation {
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-name: bar1X;
+}
+
+.Xbar1AnimationReversed {
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-name: bar1X;
+    animation-direction: reverse;
+}
+
+
+@keyframes combineBars {
+    0% {
+        margin: 12%;
+        border-top: 3px solid white;
+    }
+
+    50% {
+        transform: translateY(30px);
+        margin: 6%;
+        border-top: 2px solid white;
+    }
+
+    100% {
+        transform: translateY(100000px);
+
+        margin: 0;
+        border-top: 1px solid white;
+    }
+}
+
+@keyframes rotate90deg {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(90deg) ; }
+
+}
+
+@keyframes rotate45degClockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(135deg) translateX(-4px) translateY(4px); }
+}
+
+@keyframes bar1X {
+    100% {
+        transform: rotate(45deg) translateY(2px) translateX(1px);
+        border-top: 2px solid white;
+    }
+}

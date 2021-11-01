@@ -1,13 +1,13 @@
 import useScreenSizes from "../../utils/screenSizes";
 import { useState } from "react";
 import NavItem from "./navItem";
-import BurgerButton from "./burgerButton";
+import BurgerButton from "./burgerButton/burgerButton";
 
 import type { IScreenSizes } from "../../utils/screenSizes";
 import type { INavData } from "./navItem";
 
 const navItems : INavData[] = [
-    { name: "about", href:"about" },
+    { name: "about", href:"/" },
     { name: "career", href:"career" },
     { name: "chronology", href:"chronology" },
     { name: "blog", href:"blog" },
@@ -24,11 +24,19 @@ export default function Index(): JSX.Element {
     if (screenSizes.isMobileAndSmaller) {
         jsx = (
             <>
-                <div className="flex mb-3">
-                    <BurgerButton clickHandler={() => setMobileMenuHidden(!mobileMenuHidden)} />
-                    <h1 className="text-white">
+                <div className="flex justify-between items-center w-full max-w-lg mb-3">
+                    <div className="m-4">
+
+                    <BurgerButton hidden={mobileMenuHidden} clickHandler={() => setMobileMenuHidden(!mobileMenuHidden)} />
+                    </div>
+
+                    <h1 className="inline text-white text-xl m-2">
                         Daniel Lee
+                        <span className="block text-xs">
+                            Software Engineer
+                        </span>
                     </h1>
+
                 </div>
                 <nav className={`${mobileMenuHidden ? "hidden" : ""} flex flex-col justify-around flex-wrap`}>
                     <ul>
@@ -40,7 +48,7 @@ export default function Index(): JSX.Element {
     }
 
     if (screenSizes.isBiggerThanMobile) {
-        if (mobileMenuHidden == false) setMobileMenuHidden(true);
+        if (!mobileMenuHidden) setMobileMenuHidden(true);
         jsx = (
             <>
                 <nav

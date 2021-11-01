@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 
 const Home: NextPage = () => {
   return (
@@ -8,9 +7,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Daniel Lee</title>
         <meta name="description" content="Site about Daniel Lee" />
-        <link rel="icon" href="/favicon.ico" />
+        {/*<link rel="icon" href="/favicon.ico" />*/}
       </Head>
-
 
       <footer className={""}>
         <a

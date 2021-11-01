@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 
 
-const About: NextPage = () => {
+const Career: NextPage = () => {
     return <>about</>;
 };
 
 
 
-export default About;
+export default Career;
